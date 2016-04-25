@@ -1,6 +1,6 @@
-Brain Teasers
+Brain Teasers 1
 
-1. Given the following layout of a financial aid file:
+Given the following layout of a financial aid file:
   01 FIN-AID-LAYOUT.
       05 FSSN             PIC X(9).
       05 FNAME            PIC X(20).
