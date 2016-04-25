@@ -1,0 +1,34 @@
+BRAIN TEASER 3
+Given the layout:
+01 TUITION-LAYOUT.
+  05 TSSN              PIC X(9).
+  05 TNAME             PIC X(30).
+  05 TUIT-INFO OCCURS 6 TIMES.
+      08 TUIT-BILLED   PIC S9999V99.
+      08 TUIT-PAID     PIC 9999V99.
+      
+A. How long is the data file?
+b. In what position is TUIT-PAID (4)?
+c. Write a routine with a PERFORM VARYING statement, which will compute the BALANCE which the student owes. 
+   The BALANCE is the difference between the sum of the six TUIT-BILLED and the sum of the six TUIT-PAID.
+   
+   
+ANSWER
+01 TUITION-LAYOUT.                                                    Position
+  05 TSSN              PIC X(9).                                        1-9  
+  05 TNAME             PIC X(30).                                      10-39  
+  05 TUIT-INFO OCCURS 6 TIMES.                                          (1)     (2)     (3)     (4)     (5)     (6)     (7)
+      08 TUIT-BILLED   PIC S9999V99.                                    40-46   53-59   66-72   79-85   92-98   105-111 119-125
+      08 TUIT-PAID     PIC 9999V99.                                     47-52   60-65   73-78   84-91   99-104  112-118 121-131
+                                                                        (8)      (9)      (10)
+                                                                        132-138  143-149  156-162
+                                                                        137-142  150-155  161-168
+                                                                        
+01 MISC.
+   05 TOT-PAID          PIC 9999V99   VALUE ZEROS.
+   05 TOT-BILLED        PIC S9999V99  VALUE +0.
+   05 BALANCE           PIC S999V99   VALUE +0.
+   05 SUB               PIC 9         VALUE 1.
+
+    
+   
