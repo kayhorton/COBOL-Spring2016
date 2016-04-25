@@ -1,0 +1,28 @@
+Using the layout below and the PERFORM VARYING statement, write a routine which will add up the 10 FAMTs and store the answer in FTOT.
+
+01 FIN-AID-LAYOUT.                                                               
+      05 FSSN             PIC X(9).                                              
+      05 FNAME            PIC X(20).                                             
+      05 FTUITION         PIC 9999V99.                                          
+      05 FCODE  OCCURS 10 TIMES      PIC XXX.                                    
+      05 FAMT   OCCURS 10 TIMES      PIC 999V99.   
+      
+====================================================================      ANSWER    =======================================================       
+01 MISC.
+   05 SUB      PIC 99           VALUE ZEROS.
+   05 FTOT     PIC 999V99       VALUE ZEROS.
+   
+   
+MOVE ZEROS TO FTOT.
+PERFORM 200-CALC-TOTAL
+    VARYING SUB FROM 1 BY 1
+    UNTIL SUB > 10.
+    
+200-CALC-TOTAL.      
+      ADD FAMT(SUB) TO FTOT.
+      
+      
+      
+    
+  
+  
