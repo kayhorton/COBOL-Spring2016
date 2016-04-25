@@ -1,0 +1,27 @@
+Brain Teasers
+
+1. Given the following layout of a financial aid file:
+  01 FIN-AID-LAYOUT.
+      05 FSSN             PIC X(9).
+      05 FNAME            PIC X(20).
+      05 FTUITION         PIC 9999V99.
+      05 FIN-AID-INFO OCCURS 10 TIMES.
+          08 FCODE        PIC XXX.
+          08 FAMT         PIC 999V99.
+          
+a. How long is the data file?
+b. in what position is FCODE(6)?
+c. In what position is FAMT(7)?
+
+
+ANSWER
+01 FIN-AID-LAYOUT.                                                              Position
+      05 FSSN             PIC X(9).                                             1-9 
+      05 FNAME            PIC X(20).                                            10-29
+      05 FTUITION         PIC 9999V99.                                          30-35
+      05 FIN-AID-INFO OCCURS 10 TIMES.                                           (1)     (2)     (3)     (4)     (5)    (6)    (7)
+          08 FCODE        PIC XXX.                                              36-38   44-46   52-54   60-62   68-70  76-78  84-86
+          08 FAMT         PIC 999V99.                                           39-43   47-51   55-59   63-67   71-75  79-83  87-91
+                                                                                (8)       (9)     (10)
+                                                                                92-94   100-102   108-110
+                                                                                95-99   103-107   111-116
